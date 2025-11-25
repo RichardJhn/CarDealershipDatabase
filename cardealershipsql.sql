@@ -28,6 +28,7 @@ CREATE TABLE sales_contracts(
 salesprice int,
 salesid int auto_increment primary key,
 vin int,
+date DATE,
 foreign key (vin) references vehicles(vin)
 );
 
@@ -35,6 +36,7 @@ CREATE TABLE lease_contracts(
 leasepice int,
 leaseid int auto_increment primary key,
 vin int,
+date DATE,
 foreign key (vin) references vehicles(vin)
 );
 
@@ -51,7 +53,6 @@ INSERT INTO vehicles(carmakemodel, carcolor, mileage, vin) VALUES
 ('Nissan Altima', 'Silver', 38000, 1005),
 ('Chevy Tahoe', 'Black', 52000, 1006);
 
-
 INSERT INTO inventory(dealershipid, vin) VALUES
 (1, 1001),
 (1, 1004),
@@ -60,16 +61,15 @@ INSERT INTO inventory(dealershipid, vin) VALUES
 (3, 1003),
 (3, 1006);
 
-INSERT INTO sales_contracts(salesprice, vin) VALUES
-(15500, 1001),
-(28000, 1003),
-(24000, 1005);
+INSERT INTO sales_contracts(salesprice, vin, date) VALUES
+(15500, 1001, '2024-02-10'),
+(28000, 1003, '2024-03-05'),
+(24000, 1005, '2024-04-18');
 
-
-INSERT INTO lease_contracts(leasepice, vin) VALUES
-(399, 1004),
-(299, 1002),
-(450, 1006);
+INSERT INTO lease_contracts(leasepice, vin, date) VALUES
+(399, 1004, '2024-01-20'),
+(299, 1002, '2024-02-28'),
+(450, 1006, '2024-03-22');
 
 
 

@@ -5,3 +5,4 @@ from sales_contracts sc
 join  inventory i on i.vin = sc.vin
 join dealership d on d.dealershipid = i.dealershipid
 where d.dealershipid  = 1
+and sc.date < '2025-01-01'
